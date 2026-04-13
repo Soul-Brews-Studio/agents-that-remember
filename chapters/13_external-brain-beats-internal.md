@@ -130,9 +130,9 @@ The next chapter is the ethical companion to this one: Rule 6. If the agent is a
 
 Early in the development of one of the agents, I built what I thought was an elegant system: at the start of every session, the framework stuffed the agent's full recent history — last 30 findings, last 10 retrospectives, last 5 handoffs, identity, standing orders — into a single enormous system prompt. The rationale was: *give it everything; let it reason over the whole picture.*
 
-The prompt grew to 180K tokens on a busy day. The agent's outputs got *worse*, not better. Reasoning became less focused. It would latch onto old, irrelevant details from weeks-ago findings. It would contradict itself across turns. It would occasionally answer a current question with a stale answer from three retrospectives ago.
+The prompt grew to hundreds of thousands of tokens on a busy day — pressing against the window ceiling. The agent's outputs got *worse*, not better. Reasoning became less focused. It would latch onto old, irrelevant details from weeks-ago findings. It would contradict itself across turns. It would occasionally answer a current question with a stale answer from three retrospectives ago.
 
-The diagnosis was obvious in retrospect: I was drowning the model in a bathtub of its own history. The model's attention, at any given turn, had to distribute itself across 180K tokens of mostly-irrelevant-to-this-turn content. The few KB that actually mattered for the current task were lost in the noise.
+The diagnosis was obvious in retrospect: I was drowning the model in a bathtub of its own history. The model's attention, at any given turn, had to distribute itself across a vast amount of mostly-irrelevant-to-this-turn content. The few KB that actually mattered for the current task were lost in the noise.
 
 The fix was the external-brain principle, applied ruthlessly:
 

@@ -98,7 +98,7 @@ This sounds like hygiene pedantry until the day a bisect reveals that a commit e
 
 Let's be honest about what this costs.
 
-**It costs disk space.** Ten years of retrospectives, all session logs, every version of every mailbox — it adds up. For a personal agent, trivial. For a heavily-used multi-agent system, it's real. Mine is six gigabytes after eight months, which is three dollars of SSD or a rounding error in a cloud blob store.
+**It costs disk space.** Ten years of retrospectives, all session logs, every version of every mailbox — it adds up. For a personal agent, trivial. For a heavily-used multi-agent system, it's real — but it remains a small number of gigabytes, which is a rounding error in any modern storage budget.
 
 **It costs navigation.** A directory with 400 retrospectives is harder to scan than a directory with 12. Tooling has to compensate — search by date, filter by tag, summarize by week. If you don't build the tooling, archival turns into a junk drawer.
 
@@ -178,7 +178,7 @@ The next principle — patterns over intentions — will tell you what to *do* w
 
 ## A Worked Example: The Mailbox Clear That Wasn't
 
-Let me make this concrete. A few months into running the multi-agent system I draw from, one of the agents developed a habit of accumulating stale context. Every session, its `mailbox/context.md` grew a little — not pruned between tasks, just stacked. By month three, the context file was 40KB of barely-relevant notes. Reading it at session start was expensive, confusing, and often led the agent to chase threads that had been closed weeks ago.
+Let me make this concrete. A few months into running the multi-agent system I draw from, one of the agents developed a habit of accumulating stale context. Every session, its `mailbox/context.md` grew a little — not pruned between tasks, just stacked. After a while the context file had become tens of kilobytes of barely-relevant notes. Reading it at session start was expensive, confusing, and often led the agent to chase threads that had been closed weeks ago.
 
 The obvious move was "clear the mailbox." The tempting version was:
 
@@ -209,7 +209,7 @@ The active context was now a clean slate. The old context was a directory over. 
 
 Two weeks later I needed to answer: *what was this agent working on the day before the auth migration broke?* I `cd`d into `mailbox/archive/`, found the right timestamp, and the answer was right there — a note I'd forgotten writing about a subtle retry condition. That note was the clue I needed to fix the regression in under an hour. If I'd run the tempting `rm`, I would have spent a full day rebuilding context from git blame and commit messages.
 
-The five extra lines of shell the first time saved me eight hours the second time. That's the exchange rate archival pays, and it pays it repeatedly.
+The five extra lines of shell the first time saved most of a day of reconstruction the second time. That's the exchange rate archival pays, and it pays it repeatedly.
 
 ## The Cultural Half Of The Principle
 

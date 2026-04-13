@@ -89,7 +89,7 @@ The test doesn't judge the content. It just guarantees the pattern *exists*. If 
 
 ### Pre-commit hook — claims in retrospectives must link to evidence
 
-A retrospective that says "shipped PR #230" must include a link. A retrospective that says "commit abc123" must reference the commit hash in a form that can be verified.
+A retrospective that says "shipped PR #N" must include a link. A retrospective that mentions a commit must reference the hash in a form that can be verified.
 
 ```bash
 #!/usr/bin/env bash

@@ -146,7 +146,7 @@ Things I've found that help:
 
 **Tool-call logs that are grep-able.** Plaintext, one call per line, with timestamps. Any developer (or any agent) can find out what actually happened without special tooling.
 
-**A habit of closing with evidence, not assertion.** When you (or an agent) finish a task, the closing report is not "done" — it's "done, commit abc123, file X updated, test Y now passing." The assertion is paired with the pattern. The reader can verify without asking.
+**A habit of closing with evidence, not assertion.** When you (or an agent) finish a task, the closing report is not "done" — it's "done, commit `<hash>`, file X updated, test Y now passing." The assertion is paired with the pattern. The reader can verify without asking.
 
 These are small things. They are also the difference between a system where you can trust nothing until you've dug through logs, and a system where observation is a reflex that costs nothing.
 
@@ -196,8 +196,8 @@ A simple practice that keeps patterns-over-intentions honest: when you (or your 
 
 | Claim (intention) | Evidence (pattern) |
 |---|---|
-| shipped PR #230 | github.com/org/repo/pull/230 |
-| fixed the retry bug | commit abc123def |
+| shipped PR #N | link to the PR |
+| fixed the retry bug | link to the commit |
 | cleared the backlog | `ls inbox/` shows 0 files |
 
 If you can't fill the right column, the left column is a hypothesis. The moment you refuse to ship claims that don't have evidence columns, you've built the patterns-over-intentions reflex into your daily practice.
